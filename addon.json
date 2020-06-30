@@ -1,0 +1,6 @@
+{
+    "package-name": "djangocms-github",
+    "installed-apps": [
+        "djangocms_github"
+    ]
+}

@@ -1,0 +1,7 @@
+{% extends "base_generic.html" %}
+{% load cms_static %}
+{% for repo in repo_list %}
+    <a href="{{ repo.html_url }}">repo.name</a>
+    <h2>Description</h2>
+    <p>{{ repo.description | truncatewords: "50" }}</p>
+{% endfor %}
