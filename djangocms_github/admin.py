@@ -5,7 +5,8 @@ from djangocms_github.models import Credentials
 
 
 class CredentialsAdmin(admin.ModelAdmin):
-    list_display = ["username",]
+    list_display = ["username", ]
+    search_fields = ("username",)
     form = CredentialsAdminForm
 
 

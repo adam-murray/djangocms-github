@@ -13,6 +13,10 @@ class GithubPluginModel(CMSPlugin):
     credentials = models.ForeignKey(Credentials, on_delete=models.CASCADE)
 
 
+class OrganisationPluginModel(CMSPlugin):
+    name = models.CharField(verbose_name=_("Organisation Name"), max_length=255, blank=True)
+
+
 class RepositoryPluginModel(CMSPlugin):
     container_plugin = models.ForeignKey(GithubPluginModel, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)

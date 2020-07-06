@@ -1,0 +1,10 @@
+{% extends "admin/change_form.html" %}
+{% load cms_admin cms_static %}
+
+<p> Select submit to pull from API </p>
+
+{%  block submit_buttons_bottom %}
+    {% submit_row_plugin %}
+{% endblock %}
+
+
