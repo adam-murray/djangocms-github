@@ -12,16 +12,20 @@ class Credentials(models.Model):
 class GithubPluginModel(CMSPlugin):
     credentials = models.ForeignKey(Credentials, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class OrganisationPluginModel(CMSPlugin):
     name = models.CharField(verbose_name=_("Organisation Name"), max_length=255, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class RepositoryPluginModel(CMSPlugin):
-    container_plugin = models.ForeignKey(GithubPluginModel, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    html_url = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    updated_at = models.DateTimeField(null=True)
-    fetched_at = models.DateTimeField(auto_now=True)
+    organisation = models.ForeignKey(OrganisationPluginModel, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name

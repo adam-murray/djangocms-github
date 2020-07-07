@@ -1,0 +1,13 @@
+{% load cms_static %}
+<h1>{{ name }}</h1>
+{%  if errors %}
+    <h2>{{ errors }}</h2>
+{% else %}
+    <a href = {{ html_url  }}> Github Link</a>
+    {% if blog %}
+        <a href = {{ blog }}> Blog Link </a>
+    {%  endif %}
+    <p> {{ description }} </p>
+{% endif %}
+
+
